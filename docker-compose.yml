@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+    www:
+        build: .
+        restart: always
+        ports:
+            - '8000:80'
+        volumes:
+            - ./www:/var/www/
+        networks:
+            - default
+
+    db:
+        image: mysql:5.7
+        restart: always
+        ports:
+            - '3306:3306'
+        environment: 
+            MYSQL_INITDB_SKIP_TZINFO: 1
+            MYSQL_DATABASE: container_system
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: 123
+            MYSQL_ROOT_PASSWORD: 123
+        volumes:
+            - ./dump/:/docker-entrypoint-initdb.d
+            - db_data:/var/lib/mysql            
+
+        networks: 
+            - default
+
+volumes:
+    db_data:
