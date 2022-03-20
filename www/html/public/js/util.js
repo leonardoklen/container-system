@@ -1,4 +1,4 @@
-var APP_HOST = 'http://localhost:8000';
+var APP_HOST = `${window.location.protocol}//${window.location.host}`;
 
 $(document).ready(function(){
     $(`[id^="horaInicio"]`).mask("00:00:00");
