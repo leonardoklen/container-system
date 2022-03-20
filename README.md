@@ -1,5 +1,9 @@
-Abra o terminal, vá para a pasta raiz do projeto e execute o comando: 
+Como rodar o sistema:
 
-docker-compose up -d
+    1 - Instale o docker caso não tenha.
 
-Pronto! Acesse http://localhost:8000/ para utilizar o sistema.
+    2 - Abra o terminal, vá para a pasta raiz do projeto e execute o comando: 
+
+            docker-compose up -d
+
+Pronto! Acesse http://localhost:8000/ e utilize o sistema.
